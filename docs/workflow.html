@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>IRONCLAD Workflow Explorer</title>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>IRONCLAD</div>
+      </div>
+      <div class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="viewer.html">Viewer</a>
+        <a href="#explorer">Workflow explorer</a>
+      </div>
+    </div>
+
+    <div class="section" id="explorer">
+      <h2>Interactive workflow explorer</h2>
+      <p>Click each stage to see what IRONCLAD does and what data objects are produced.</p>
+
+      <div class="workflow-shell">
+        <div class="card">
+          <div class="small" style="margin-bottom:8px">Pipeline stages</div>
+          <div class="workflow-steps" id="workflowSteps"></div>
+        </div>
+
+        <div class="card">
+          <div id="stageTitle" style="font-weight:800; font-size:18px"></div>
+          <p id="stageSummary" style="margin-top:8px"></p>
+
+          <div style="font-weight:700; margin-top:10px">Key outputs</div>
+          <ul id="stageOutputs" class="small" style="line-height:1.6"></ul>
+
+          <div style="font-weight:700; margin-top:10px">Example object</div>
+          <pre id="stageJson" class="code" style="margin-top:8px"></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Use this with the viewer</h2>
+      <div class="card">
+        <ol style="margin:0; padding-left:20px; line-height:1.7">
+          <li>Run the desktop app against a paper PDF.</li>
+          <li>Open <span style="font-family:var(--mono)">ironclad_output.json</span> in <a href="viewer.html">viewer.html</a>.</li>
+          <li>Filter records by category/origin, inspect snippets, and export filtered CSV/JSON.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="footer">Client-side only workflow guide for GitHub Pages deployments.</div>
+  </div>
+
+  <script src="assets/js/workflow.js"></script>
+</body>
+</html>
