@@ -1,0 +1,770 @@
+{
+  "doc_id": "demo:polymer-electrolyte",
+  "pdf": "demo_polymer_electrolyte.pdf",
+  "records": [
+    {
+      "doc_id": "demo:polymer-electrolyte",
+      "source_type": "text",
+      "material": "PEO-LiTFSI",
+      "property": "ionic_conductivity",
+      "category": "Electrochemical",
+      "value_min": 0.0012,
+      "value_max": null,
+      "unit_original": "S/cm",
+      "value_si_min": 0.12,
+      "value_si_max": null,
+      "unit_si": "S/m",
+      "dimension": "conductivity",
+      "method": "EIS",
+      "origin": "this_work",
+      "origin_rationale": {
+        "citations": []
+      },
+      "citations": [],
+      "confidence": 0.92,
+      "provenance": {
+        "page": 4,
+        "bbox": [
+          72,
+          120,
+          540,
+          190
+        ],
+        "snippet": "In this work, the ionic conductivity reached 1.2×10−3 S/cm at 60 °C for PEO-LiTFSI."
+      },
+      "normalization_traces": [
+        {
+          "from": "0.0012 S/cm",
+          "to": "0.12 S/m",
+          "dimension": "conductivity"
+        }
+      ],
+      "constraints": {
+        "hard_pass": [
+          "unit_dimension_compatible"
+        ],
+        "hard_fail": [],
+        "soft_warn": []
+      }
+    },
+    {
+      "doc_id": "demo:polymer-electrolyte",
+      "source_type": "text",
+      "material": "PEO-LiTFSI",
+      "property": "li_transference_number",
+      "category": "Electrochemical",
+      "value_min": 0.32,
+      "value_max": null,
+      "unit_original": "",
+      "value_si_min": null,
+      "value_si_max": null,
+      "unit_si": null,
+      "dimension": "dimensionless",
+      "method": "EIS",
+      "origin": "this_work",
+      "origin_rationale": {
+        "citations": []
+      },
+      "citations": [],
+      "confidence": 0.88,
+      "provenance": {
+        "page": 5,
+        "bbox": [
+          72,
+          120,
+          540,
+          190
+        ],
+        "snippet": "The Li+ transference number (tLi+) was 0.32 for the optimized PEO-LiTFSI formulation."
+      },
+      "normalization_traces": [],
+      "constraints": {
+        "hard_pass": [
+          "unit_dimension_compatible"
+        ],
+        "hard_fail": [],
+        "soft_warn": []
+      }
+    },
+    {
+      "doc_id": "demo:polymer-electrolyte",
+      "source_type": "text",
+      "material": "PVDF-HFP",
+      "property": "electrochemical_stability_window",
+      "category": "Electrochemical",
+      "value_min": 4.8,
+      "value_max": 5.4,
+      "unit_original": "V",
+      "value_si_min": 4.8,
+      "value_si_max": 5.4,
+      "unit_si": "V",
+      "dimension": "voltage",
+      "method": "LSV",
+      "origin": "this_work",
+      "origin_rationale": {
+        "citations": []
+      },
+      "citations": [],
+      "confidence": 0.9,
+      "provenance": {
+        "page": 6,
+        "bbox": [
+          72,
+          120,
+          540,
+          190
+        ],
+        "snippet": "Linear sweep voltammetry showed an electrochemical stability window of 4.8–5.4 V for PVDF-HFP."
+      },
+      "normalization_traces": [
+        {
+          "from": "4.8–5.4 V",
+          "to": "4.8–5.4 V",
+          "dimension": "voltage"
+        }
+      ],
+      "constraints": {
+        "hard_pass": [
+          "unit_dimension_compatible"
+        ],
+        "hard_fail": [],
+        "soft_warn": []
+      }
+    },
+    {
+      "doc_id": "demo:polymer-electrolyte",
+      "source_type": "text",
+      "material": "PEO",
+      "property": "glass_transition_temperature",
+      "category": "Thermal",
+      "value_min": -58,
+      "value_max": null,
+      "unit_original": "°C",
+      "value_si_min": 215.14999999999998,
+      "value_si_max": null,
+      "unit_si": "K",
+      "dimension": "temperature",
+      "method": "DSC",
+      "origin": "this_work",
+      "origin_rationale": {
+        "citations": []
+      },
+      "citations": [],
+      "confidence": 0.86,
+      "provenance": {
+        "page": 3,
+        "bbox": [
+          72,
+          120,
+          540,
+          190
+        ],
+        "snippet": "DSC indicated a glass transition temperature (Tg) of −58 °C for PEO."
+      },
+      "normalization_traces": [
+        {
+          "from": "-58 °C",
+          "to": "215.14999999999998 K",
+          "dimension": "temperature"
+        }
+      ],
+      "constraints": {
+        "hard_pass": [
+          "unit_dimension_compatible"
+        ],
+        "hard_fail": [],
+        "soft_warn": []
+      }
+    },
+    {
+      "doc_id": "demo:polymer-electrolyte",
+      "source_type": "text",
+      "material": "PEO",
+      "property": "viscosity",
+      "category": "Rheology",
+      "value_min": 12.0,
+      "value_max": 18.0,
+      "unit_original": "Pa·s",
+      "value_si_min": 12.0,
+      "value_si_max": 18.0,
+      "unit_si": "Pa·s",
+      "dimension": "viscosity",
+      "method": "rheometer",
+      "origin": "this_work",
+      "origin_rationale": {
+        "citations": []
+      },
+      "citations": [],
+      "confidence": 0.83,
+      "provenance": {
+        "page": 7,
+        "bbox": [
+          72,
+          120,
+          540,
+          190
+        ],
+        "snippet": "At 25 °C, the viscosity was 12–18 Pa·s for the PEO melt under low shear."
+      },
+      "normalization_traces": [
+        {
+          "from": "12.0–18.0 Pa·s",
+          "to": "12.0–18.0 Pa·s",
+          "dimension": "viscosity"
+        }
+      ],
+      "constraints": {
+        "hard_pass": [
+          "unit_dimension_compatible"
+        ],
+        "hard_fail": [],
+        "soft_warn": []
+      }
+    },
+    {
+      "doc_id": "demo:polymer-electrolyte",
+      "source_type": "text",
+      "material": "PEO",
+      "property": "viscosity",
+      "category": "Rheology",
+      "value_min": 5.0,
+      "value_max": 50.0,
+      "unit_original": "Pa·s",
+      "value_si_min": 5.0,
+      "value_si_max": 50.0,
+      "unit_si": "Pa·s",
+      "dimension": "viscosity",
+      "method": null,
+      "origin": "literature",
+      "origin_rationale": {
+        "citations": [
+          "Ref. 12"
+        ]
+      },
+      "citations": [
+        "Ref. 12"
+      ],
+      "confidence": 0.78,
+      "provenance": {
+        "page": 2,
+        "bbox": [
+          72,
+          120,
+          540,
+          190
+        ],
+        "snippet": "Reported viscosities of PEO range from 5 to 50 Pa·s depending on molecular weight (Ref. 12)."
+      },
+      "normalization_traces": [
+        {
+          "from": "5.0–50.0 Pa·s",
+          "to": "5.0–50.0 Pa·s",
+          "dimension": "viscosity"
+        }
+      ],
+      "constraints": {
+        "hard_pass": [
+          "unit_dimension_compatible"
+        ],
+        "hard_fail": [],
+        "soft_warn": []
+      }
+    },
+    {
+      "doc_id": "demo:polymer-electrolyte",
+      "source_type": "text",
+      "material": "PEO",
+      "property": "storage_modulus",
+      "category": "Rheology",
+      "value_min": 10000.0,
+      "value_max": 500000.0,
+      "unit_original": "Pa",
+      "value_si_min": 10000.0,
+      "value_si_max": 500000.0,
+      "unit_si": "Pa",
+      "dimension": "pressure",
+      "method": "DMA",
+      "origin": "literature",
+      "origin_rationale": {
+        "citations": [
+          "Ref. 3"
+        ]
+      },
+      "citations": [
+        "Ref. 3"
+      ],
+      "confidence": 0.77,
+      "provenance": {
+        "page": 2,
+        "bbox": [
+          72,
+          120,
+          540,
+          190
+        ],
+        "snippet": "Prior studies report storage moduli G' between 10^4 and 5×10^5 Pa for PEO (Ref. 3)."
+      },
+      "normalization_traces": [
+        {
+          "from": "10000.0–500000.0 Pa",
+          "to": "10000.0–500000.0 Pa",
+          "dimension": "pressure"
+        }
+      ],
+      "constraints": {
+        "hard_pass": [
+          "unit_dimension_compatible"
+        ],
+        "hard_fail": [],
+        "soft_warn": []
+      }
+    },
+    {
+      "doc_id": "demo:polymer-electrolyte",
+      "source_type": "text",
+      "material": "PEO-LiTFSI",
+      "property": "ionic_conductivity",
+      "category": "Electrochemical",
+      "value_min": 0.0002,
+      "value_max": 0.005,
+      "unit_original": "S/cm",
+      "value_si_min": 0.02,
+      "value_si_max": 0.5,
+      "unit_si": "S/m",
+      "dimension": "conductivity",
+      "method": "EIS",
+      "origin": "literature",
+      "origin_rationale": {
+        "citations": [
+          "Refs. 7–9"
+        ]
+      },
+      "citations": [
+        "Refs. 7–9"
+      ],
+      "confidence": 0.75,
+      "provenance": {
+        "page": 1,
+        "bbox": [
+          72,
+          120,
+          540,
+          190
+        ],
+        "snippet": "Conductivity values of 2×10−4–5×10−3 S/cm have been reported for PEO-LiTFSI (Refs. 7–9)."
+      },
+      "normalization_traces": [
+        {
+          "from": "0.0002–0.005 S/cm",
+          "to": "0.02–0.5 S/m",
+          "dimension": "conductivity"
+        }
+      ],
+      "constraints": {
+        "hard_pass": [
+          "unit_dimension_compatible"
+        ],
+        "hard_fail": [],
+        "soft_warn": []
+      }
+    },
+    {
+      "doc_id": "demo:polymer-electrolyte",
+      "source_type": "text",
+      "material": "PEO-LiTFSI",
+      "property": "li_transference_number",
+      "category": "Electrochemical",
+      "value_min": 0.1,
+      "value_max": 0.4,
+      "unit_original": "",
+      "value_si_min": null,
+      "value_si_max": null,
+      "unit_si": null,
+      "dimension": "dimensionless",
+      "method": null,
+      "origin": "literature",
+      "origin_rationale": {
+        "citations": [
+          "Ref. 8"
+        ]
+      },
+      "citations": [
+        "Ref. 8"
+      ],
+      "confidence": 0.74,
+      "provenance": {
+        "page": 1,
+        "bbox": [
+          72,
+          120,
+          540,
+          190
+        ],
+        "snippet": "Literature reports tLi+ of 0.1–0.4 for PEO-LiTFSI systems (Ref. 8)."
+      },
+      "normalization_traces": [],
+      "constraints": {
+        "hard_pass": [
+          "unit_dimension_compatible"
+        ],
+        "hard_fail": [],
+        "soft_warn": []
+      }
+    },
+    {
+      "doc_id": "demo:polymer-electrolyte",
+      "source_type": "text",
+      "material": "PEO",
+      "property": "number_average_molecular_weight",
+      "category": "Chemical",
+      "value_min": 100000,
+      "value_max": null,
+      "unit_original": "g/mol",
+      "value_si_min": 100000.0,
+      "value_si_max": null,
+      "unit_si": "g/mol",
+      "dimension": "molecular_weight",
+      "method": "GPC",
+      "origin": "this_work",
+      "origin_rationale": {
+        "citations": []
+      },
+      "citations": [],
+      "confidence": 0.84,
+      "provenance": {
+        "page": 3,
+        "bbox": [
+          72,
+          120,
+          540,
+          190
+        ],
+        "snippet": "GPC gave Mn = 100,000 g/mol for PEO."
+      },
+      "normalization_traces": [
+        {
+          "from": "100000 g/mol",
+          "to": "100000.0 g/mol",
+          "dimension": "molecular_weight"
+        }
+      ],
+      "constraints": {
+        "hard_pass": [
+          "unit_dimension_compatible",
+          "mw_ge_mn_consistent"
+        ],
+        "hard_fail": [],
+        "soft_warn": []
+      }
+    },
+    {
+      "doc_id": "demo:polymer-electrolyte",
+      "source_type": "text",
+      "material": "PEO",
+      "property": "weight_average_molecular_weight",
+      "category": "Chemical",
+      "value_min": 120000,
+      "value_max": null,
+      "unit_original": "g/mol",
+      "value_si_min": 120000.0,
+      "value_si_max": null,
+      "unit_si": "g/mol",
+      "dimension": "molecular_weight",
+      "method": "GPC",
+      "origin": "this_work",
+      "origin_rationale": {
+        "citations": []
+      },
+      "citations": [],
+      "confidence": 0.84,
+      "provenance": {
+        "page": 3,
+        "bbox": [
+          72,
+          120,
+          540,
+          190
+        ],
+        "snippet": "GPC gave Mw = 120,000 g/mol for PEO."
+      },
+      "normalization_traces": [
+        {
+          "from": "120000 g/mol",
+          "to": "120000.0 g/mol",
+          "dimension": "molecular_weight"
+        }
+      ],
+      "constraints": {
+        "hard_pass": [
+          "unit_dimension_compatible",
+          "mw_ge_mn_consistent"
+        ],
+        "hard_fail": [],
+        "soft_warn": []
+      }
+    },
+    {
+      "doc_id": "demo:polymer-electrolyte",
+      "source_type": "text",
+      "material": "PEO",
+      "property": "dispersity",
+      "category": "Chemical",
+      "value_min": 1.2,
+      "value_max": null,
+      "unit_original": "",
+      "value_si_min": null,
+      "value_si_max": null,
+      "unit_si": null,
+      "dimension": "dimensionless",
+      "method": "GPC",
+      "origin": "this_work",
+      "origin_rationale": {
+        "citations": []
+      },
+      "citations": [],
+      "confidence": 0.82,
+      "provenance": {
+        "page": 3,
+        "bbox": [
+          72,
+          120,
+          540,
+          190
+        ],
+        "snippet": "The dispersity (Đ) was 1.20."
+      },
+      "normalization_traces": [],
+      "constraints": {
+        "hard_pass": [
+          "unit_dimension_compatible"
+        ],
+        "hard_fail": [],
+        "soft_warn": []
+      }
+    }
+  ],
+  "tables": [
+    {
+      "table_id": "T2",
+      "page": 5,
+      "bbox": [
+        60,
+        180,
+        540,
+        460
+      ],
+      "header": [
+        "Material",
+        "T (°C)",
+        "σ (S/cm)",
+        "tLi+",
+        "Method"
+      ],
+      "rows": [
+        [
+          "PEO-LiTFSI (20 wt%)",
+          "60",
+          "1.2×10−3",
+          "0.32",
+          "EIS"
+        ],
+        [
+          "PEO-LiTFSI (20 wt%)",
+          "25",
+          "3.0×10−4",
+          "0.28",
+          "EIS"
+        ],
+        [
+          "PVDF-HFP gel",
+          "25",
+          "8.0×10−4",
+          "—",
+          "EIS"
+        ]
+      ],
+      "meta": {
+        "table_number": 2,
+        "caption": "Table 2. Transport properties of polymer electrolytes measured in this work and compared with literature values."
+      }
+    }
+  ],
+  "figures": {
+    "images": [
+      {
+        "page": 4,
+        "path": "assets/demo/images/fig_p4_0.png",
+        "width": 750,
+        "height": 450,
+        "xref": 12,
+        "ext": "png",
+        "caption": "Figure 4. Arrhenius plot of ionic conductivity for PEO-LiTFSI electrolytes.",
+        "caption_page": 4,
+        "figure_type": "plot",
+        "plot_like": true
+      },
+      {
+        "page": 6,
+        "path": "assets/demo/images/fig_p6_0.png",
+        "width": 750,
+        "height": 450,
+        "xref": 18,
+        "ext": "png",
+        "caption": "Figure 6. Stress–strain response of PVDF-HFP films at room temperature.",
+        "caption_page": 6,
+        "figure_type": "plot",
+        "plot_like": true
+      },
+      {
+        "page": 2,
+        "path": "assets/demo/images/fig_p2_0.png",
+        "width": 750,
+        "height": 450,
+        "xref": 7,
+        "ext": "png",
+        "caption": "Figure 2. Frequency sweep showing storage (G′) and loss (G″) moduli of PEO.",
+        "caption_page": 2,
+        "figure_type": "plot",
+        "plot_like": true
+      }
+    ],
+    "captions": [
+      {
+        "page": 4,
+        "bbox": [
+          60,
+          540,
+          540,
+          610
+        ],
+        "text": "Figure 4. Arrhenius plot of ionic conductivity for PEO-LiTFSI electrolytes."
+      },
+      {
+        "page": 6,
+        "bbox": [
+          60,
+          540,
+          540,
+          610
+        ],
+        "text": "Figure 6. Stress–strain response of PVDF-HFP films at room temperature."
+      },
+      {
+        "page": 2,
+        "bbox": [
+          60,
+          540,
+          540,
+          610
+        ],
+        "text": "Figure 2. Frequency sweep showing storage (G′) and loss (G″) moduli of PEO."
+      }
+    ]
+  },
+  "comparison": [
+    {
+      "material": "PEO",
+      "property": "dispersity",
+      "category": "Chemical",
+      "this_work": "1.200 ",
+      "paper_cited_literature": "",
+      "external_baseline": "",
+      "novelty_flag": "potentially_new_property",
+      "paper_citations": ""
+    },
+    {
+      "material": "PEO",
+      "property": "glass_transition_temperature",
+      "category": "Thermal",
+      "this_work": "215.15 K",
+      "paper_cited_literature": "",
+      "external_baseline": "",
+      "novelty_flag": "potentially_new_property",
+      "paper_citations": ""
+    },
+    {
+      "material": "PEO",
+      "property": "number_average_molecular_weight",
+      "category": "Chemical",
+      "this_work": "1.000e+05 g/mol",
+      "paper_cited_literature": "",
+      "external_baseline": "",
+      "novelty_flag": "potentially_new_property",
+      "paper_citations": ""
+    },
+    {
+      "material": "PEO",
+      "property": "storage_modulus",
+      "category": "Rheology",
+      "this_work": "",
+      "paper_cited_literature": "1.000e+04–5.000e+05 Pa",
+      "external_baseline": "1.000e+04–5.000e+05 Pa",
+      "novelty_flag": "",
+      "paper_citations": "Ref. 3"
+    },
+    {
+      "material": "PEO",
+      "property": "viscosity",
+      "category": "Rheology",
+      "this_work": "12.000–18.000 Pa·s",
+      "paper_cited_literature": "5.000–50.000 Pa·s",
+      "external_baseline": "5.000–50.000 Pa·s",
+      "novelty_flag": "compared_to_cited_lit",
+      "paper_citations": "Ref. 12"
+    },
+    {
+      "material": "PEO",
+      "property": "weight_average_molecular_weight",
+      "category": "Chemical",
+      "this_work": "1.200e+05 g/mol",
+      "paper_cited_literature": "",
+      "external_baseline": "",
+      "novelty_flag": "potentially_new_property",
+      "paper_citations": ""
+    },
+    {
+      "material": "PEO-LiTFSI",
+      "property": "ionic_conductivity",
+      "category": "Electrochemical",
+      "this_work": "0.1200 S/m",
+      "paper_cited_literature": "0.0200–0.5000 S/m",
+      "external_baseline": "1.000e-04–0.0050 S/cm",
+      "novelty_flag": "compared_to_cited_lit",
+      "paper_citations": "Refs. 7–9"
+    },
+    {
+      "material": "PEO-LiTFSI",
+      "property": "li_transference_number",
+      "category": "Electrochemical",
+      "this_work": "0.3200 ",
+      "paper_cited_literature": "0.1000–0.4000 ",
+      "external_baseline": "0.1000–0.4000 ",
+      "novelty_flag": "compared_to_cited_lit",
+      "paper_citations": "Ref. 8"
+    },
+    {
+      "material": "PVDF-HFP",
+      "property": "electrochemical_stability_window",
+      "category": "Electrochemical",
+      "this_work": "4.800–5.400 V",
+      "paper_cited_literature": "",
+      "external_baseline": "4.000–5.500 V",
+      "novelty_flag": "within_baseline_range",
+      "paper_citations": ""
+    }
+  ],
+  "logs": [
+    "IRONCLAD run started: demo_polymer_electrolyte.pdf",
+    "Output dir: outputs/",
+    "Parsed 214 text blocks after header/footer filtering.",
+    "Default material guess: PEO",
+    "Extracted 38 text-derived candidate records.",
+    "Detected 3 tables.",
+    "Extracted 7 table-derived records.",
+    "Extracted 12 embedded images.",
+    "Constraint evaluation done. Records with hard-fails: 0.",
+    "Loaded baseline records: 5 from examples/literature_baseline.jsonl",
+    "Built comparison table with 9 rows.",
+    "Run finished in 2.41 s."
+  ]
+}

@@ -1,0 +1,5 @@
+{"material": "PEO", "property": "viscosity", "value_min": 5.0, "value_max": 50.0, "unit_original": "Pa\u00b7s", "source": "lit_demo"}
+{"material": "PEO", "property": "storage_modulus", "value_min": 10000.0, "value_max": 500000.0, "unit_original": "Pa", "source": "lit_demo"}
+{"material": "PEO-LiTFSI", "property": "ionic_conductivity", "value_min": 0.0001, "value_max": 0.005, "unit_original": "S/cm", "source": "lit_demo"}
+{"material": "PEO-LiTFSI", "property": "li_transference_number", "value_min": 0.1, "value_max": 0.4, "unit_original": "", "source": "lit_demo"}
+{"material": "PVDF-HFP", "property": "electrochemical_stability_window", "value_min": 4.0, "value_max": 5.5, "unit_original": "V", "source": "lit_demo"}

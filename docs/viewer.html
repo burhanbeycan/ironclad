@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>IRONCLAD Interactive Viewer</title>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>IRONCLAD Viewer</div>
+      </div>
+      <div class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="https://github.com/burhanbeycan/ironclad" target="_blank" rel="noreferrer">Repo</a>
+      </div>
+    </div>
+
+    <div class="notice">
+      This viewer runs entirely in your browser. It does <b>not</b> parse PDFs.
+      To visualize a paper, first generate <span style="font-family:var(--mono)">ironclad_output.json</span>
+      using the desktop app, then load it here.
+    </div>
+
+    <div class="viewer-shell" style="margin-top:14px">
+      <div class="card side">
+        <div style="font-weight:800; margin-bottom:8px">Load data</div>
+
+        <div class="small">IRONCLAD output JSON</div>
+        <input class="input" id="fileInput" type="file" accept=".json,application/json"/>
+        <div class="cta-row" style="margin-top:10px">
+          <button class="btn primary" id="loadDemo" type="button">Load demo</button>
+          <button class="btn" id="clearData" type="button">Clear</button>
+        </div>
+
+        <hr class="sep"/>
+
+        <div style="font-weight:800; margin-bottom:8px">Filters</div>
+
+        <div class="small">Search (material / property / snippet)</div>
+        <input class="input" id="searchInput" type="text" placeholder="e.g., PEO, conductivity, Tg…"/>
+
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px; margin-top:10px">
+          <div>
+            <div class="small">Origin</div>
+            <select class="input" id="originSelect">
+              <option value="all">All</option>
+              <option value="this_work">this_work</option>
+              <option value="literature">literature</option>
+              <option value="mixed">mixed</option>
+              <option value="unclear">unclear</option>
+            </select>
+          </div>
+          <div>
+            <div class="small">Category</div>
+            <select class="input" id="categorySelect">
+              <option value="all">All</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="margin-top:10px">
+          <label style="display:flex; align-items:center; gap:10px; cursor:pointer;">
+            <input id="hardFailOnly" type="checkbox"/>
+            <span class="small">Only records with hard-fail constraints</span>
+          </label>
+        </div>
+
+        <hr class="sep"/>
+
+        <div style="font-weight:800; margin-bottom:8px">Figures (optional)</div>
+        <div class="small">
+          If your JSON references extracted images with local file paths, select those image files here so the browser can display them.
+        </div>
+        <input class="input" id="imageInput" type="file" accept="image/*" multiple style="margin-top:10px"/>
+
+        <hr class="sep"/>
+
+        <div style="font-weight:800; margin-bottom:8px">Export</div>
+        <div class="cta-row">
+          <button class="btn" id="exportCsv" type="button">Download CSV (filtered)</button>
+          <button class="btn" id="exportJson" type="button">Download JSON (filtered)</button>
+        </div>
+
+        <hr class="sep"/>
+
+        <div style="font-weight:800; margin-bottom:8px">Stats</div>
+        <div class="kv" id="statsKv">
+          <div class="k">status</div><div class="v">No data loaded.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="tabs" id="tabs">
+          <div class="tab active" data-tab="records">Records</div>
+          <div class="tab" data-tab="comparison">Comparison</div>
+          <div class="tab" data-tab="tables">Tables</div>
+          <div class="tab" data-tab="figures">Figures</div>
+          <div class="tab" data-tab="logs">Logs</div>
+        </div>
+
+        <div id="tab-records" class="tabpanel">
+          <div class="small">Tip: click a row to inspect provenance + JSON.</div>
+          <div class="table-wrap" style="margin-top:10px">
+            <table id="recordsTable">
+              <thead>
+                <tr>
+                  <th data-key="material">material</th>
+                  <th data-key="category">category</th>
+                  <th data-key="property">property</th>
+                  <th data-key="value_display">value</th>
+                  <th data-key="unit_original">unit</th>
+                  <th data-key="page">page</th>
+                  <th data-key="origin">origin</th>
+                  <th data-key="confidence">confidence</th>
+                  <th data-key="hard_fail">hard_fail</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+
+          <div class="details" id="recordDetails" style="display:none">
+            <div style="font-weight:800; margin-bottom:10px">Selected record</div>
+            <div class="kv" id="recordKv"></div>
+            <div style="margin-top:10px; font-weight:800">Provenance snippet</div>
+            <div class="code" id="recordSnippet" style="margin-top:8px"></div>
+            <div style="margin-top:10px; font-weight:800">Raw JSON</div>
+            <pre id="recordJson"></pre>
+          </div>
+        </div>
+
+        <div id="tab-comparison" class="tabpanel" style="display:none">
+          <div class="small">Paper-centric aggregation: this work vs cited literature vs external baseline (if present in the JSON).</div>
+          <div class="table-wrap" style="margin-top:10px">
+            <table id="comparisonTable">
+              <thead>
+                <tr>
+                  <th data-key="material">material</th>
+                  <th data-key="property">property</th>
+                  <th data-key="category">category</th>
+                  <th data-key="this_work">this_work</th>
+                  <th data-key="paper_cited_literature">paper_cited_literature</th>
+                  <th data-key="external_baseline">external_baseline</th>
+                  <th data-key="novelty_flag">novelty_flag</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="tab-tables" class="tabpanel" style="display:none">
+          <div class="small">Detected table regions (header + rows) from the JSON.</div>
+          <div id="tablesArea" style="margin-top:10px"></div>
+        </div>
+
+        <div id="tab-figures" class="tabpanel" style="display:none">
+          <div class="small">Embedded images & captions. If images don’t render, use the file picker on the left to load them.</div>
+          <div id="figuresArea" class="gallery" style="margin-top:10px"></div>
+        </div>
+
+        <div id="tab-logs" class="tabpanel" style="display:none">
+          <div class="small">Engine logs saved in the JSON.</div>
+          <pre class="code" id="logsPre" style="margin-top:10px; max-height:520px"></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      Sorting: click column headers. Everything is client-side.
+    </div>
+  </div>
+
+  <script src="assets/js/viewer.js"></script>
+</body>
+</html>

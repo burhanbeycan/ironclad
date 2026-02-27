@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>IRONCLAD — Proof-carrying polymer & materials extraction</title>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>IRONCLAD</div>
+      </div>
+      <div class="navlinks">
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="#outputs">Outputs</a>
+        <a href="viewer.html">Interactive viewer</a>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="card">
+        <h1>Proof-carrying extraction for polymer & materials properties.</h1>
+        <p>
+          IRONCLAD turns PDF papers into <b>auditable</b>, <b>provenance-linked</b> records —
+          with explicit unit normalization traces, constraint checks, and a paper-centric
+          <i>“this work vs cited literature vs baseline”</i> comparison table.
+        </p>
+
+        <div class="badges">
+          <div class="badge">Tkinter desktop demo</div>
+          <div class="badge">Tables + figures support</div>
+          <div class="badge">Polymer rheology + electrolyte ontology</div>
+          <div class="badge">Deterministic origin classifier</div>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn primary" href="viewer.html">Launch interactive viewer</a>
+          <a class="btn" href="https://github.com/burhanbeycan/ironclad" target="_blank" rel="noreferrer">GitHub repo</a>
+        </div>
+
+        <div style="margin-top:14px" class="small">
+          Tip: run the desktop app on a PDF, then drag <span style="font-family:var(--mono)">ironclad_output.json</span> into the viewer.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="kpi">
+          <div class="title">Why “proof-carrying” matters</div>
+          <div class="desc">
+            Polymer property extraction is only useful if it is traceable:
+            the <b>page</b>, <b>snippet</b>, <b>unit handling</b>, and <b>validation checks</b>
+            must be inspectable to avoid propagating silent errors into downstream models.
+          </div>
+        </div>
+
+        <hr class="sep"/>
+
+        <div class="kpi">
+          <div class="title">What you can compare</div>
+          <div class="desc">
+            Example: ionic conductivity vs baseline ranges, Tg vs formulation, or modulus vs processing.
+            IRONCLAD flags cases that are merely “compared to literature” vs potentially <b>new regimes</b>.
+          </div>
+        </div>
+
+        <hr class="sep"/>
+
+        <div class="kpi">
+          <div class="title">Built for polymer-heavy PDFs</div>
+          <div class="desc">
+            Handles common units (Pa·s, MPa, S/cm, °C, g/mol), and includes cross-record checks like
+            <span style="font-family:var(--mono)">Mw ≥ Mn</span> and <span style="font-family:var(--mono)">Đ ≥ 1</span>.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="features" class="section">
+      <h2>Features</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="kpi">
+            <div class="title">This work vs literature</div>
+            <div class="desc">
+              Deterministic cue + citation heuristics label each record as
+              <span class="rowtag tag-this">this_work</span>,
+              <span class="rowtag tag-lit">literature</span>,
+              <span class="rowtag tag-mixed">mixed</span>, or
+              <span class="rowtag tag-unclear">unclear</span>.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="kpi">
+            <div class="title">Table reconstruction</div>
+            <div class="desc">
+              Rebuilds rows/columns from PDF layout; optionally extracts records from comparison tables.
+              Includes caption-anchored OCR/VLM fallback hooks for image-only tables.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="kpi">
+            <div class="title">Figures + captions</div>
+            <div class="desc">
+              Exports embedded figures and links them to detected “Fig.” / “Figure” captions,
+              helping you jump from a record to its visual context.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="kpi">
+            <div class="title">Unit normalization traces</div>
+            <div class="desc">
+              Each record stores original value/unit and SI conversion (when available), so you can audit conversions
+              like <span style="font-family:var(--mono)">S/cm → S/m</span> or <span style="font-family:var(--mono)">°C → K</span>.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="kpi">
+            <div class="title">Constraint checks</div>
+            <div class="desc">
+              Flags dimension/unit mismatches and polymer cross-checks (Mw vs Mn, dispersity plausibility) without hidden ML behavior.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="kpi">
+            <div class="title">Interactive web viewer</div>
+            <div class="desc">
+              A static GitHub Pages dashboard that lets you filter records, inspect provenance, browse figures, and export CSV —
+              directly in the browser.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="how" class="section">
+      <h2>How it works</h2>
+      <p>Use the desktop app for PDF parsing, then use the web viewer for exploration and sharing.</p>
+      <div class="card">
+        <div class="small">1) Install dependencies</div>
+        <pre class="code">pip install -r requirements.txt</pre>
+        <div class="small" style="margin-top:10px">2) Run the desktop GUI</div>
+        <pre class="code"># macOS / Linux
+./run_tk_desktop.sh
+
+# Windows (PowerShell)
+.\run_tk_desktop.bat</pre>
+        <div class="small" style="margin-top:10px">3) Analyze a paper and open the viewer</div>
+        <pre class="code"># generated in your chosen output folder
+outputs/ironclad_output.json</pre>
+        <div class="small">Then open <a href="viewer.html">viewer.html</a> and load the JSON.</div>
+      </div>
+    </div>
+
+    <div id="outputs" class="section">
+      <h2>Outputs you can share</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="kpi">
+            <div class="title">ironclad_output.json</div>
+            <div class="desc">Full proof-carrying record set, plus tables, figures, comparison table, and logs.</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="kpi">
+            <div class="title">ironclad_summary.csv</div>
+            <div class="desc">Flat table for spreadsheets or quick plotting.</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="kpi">
+            <div class="title">ironclad_comparison.csv</div>
+            <div class="desc">Paper-centric comparison: this work vs cited literature vs baseline.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      Built for reproducible polymer/materials extraction workflows. No server required — GitHub Pages only.
+    </div>
+  </div>
+</body>
+</html>
