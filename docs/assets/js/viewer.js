@@ -1,6 +1,9 @@
 /* IRONCLAD Viewer — pure client-side */
 
 const els = {
+  pdfInput: document.getElementById('pdfInput'),
+  analyzePdf: document.getElementById('analyzePdf'),
+  pdfStatus: document.getElementById('pdfStatus'),
   fileInput: document.getElementById('fileInput'),
   loadDemo: document.getElementById('loadDemo'),
   clearData: document.getElementById('clearData'),
@@ -50,6 +53,13 @@ const state = {
 
   filteredRecordViews: [],
 };
+
+function setPdfStatus(msg, cls='status-warn'){
+  if (!els.pdfStatus) return;
+  els.pdfStatus.textContent = msg;
+  els.pdfStatus.classList.remove('status-ok', 'status-warn', 'status-error');
+  if (cls) els.pdfStatus.classList.add(cls);
+}
 
 function setStats(items){
   els.statsKv.innerHTML = '';
@@ -531,6 +541,49 @@ function exportFilteredJson(){
 
 /* Events */
 
+els.analyzePdf?.addEventListener('click', async () => {
+  const pdf = els.pdfInput?.files?.[0];
+  if (!pdf){
+    setPdfStatus('Select a PDF file first.', 'status-error');
+    return;
+  }
+
+  const btn = els.analyzePdf;
+  const prev = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = 'Analyzing…';
+  setPdfStatus('Uploading PDF and running IRONCLAD… this may take up to a minute.', 'status-warn');
+
+  try{
+    const formData = new FormData();
+    formData.append('pdf', pdf, pdf.name);
+    formData.append('doc_id', pdf.name.replace(/\.pdf$/i, '') || 'local:paper');
+
+    const resp = await fetch('/api/analyze', {
+      method: 'POST',
+      body: formData,
+    });
+
+    const payload = await resp.json().catch(() => null);
+    if (!resp.ok || !payload){
+      const detail = payload?.error || `HTTP ${resp.status}`;
+      throw new Error(detail);
+    }
+
+    await loadJsonObject(payload);
+    setPdfStatus(`Analysis complete. Loaded ${payload.records?.length || 0} records from ${pdf.name}.`, 'status-ok');
+  }catch(err){
+    console.error(err);
+    setPdfStatus(
+      `PDF analysis failed: ${err.message}. Start the local server with "python -m app.web_viewer" and reload this page.`,
+      'status-error'
+    );
+  }finally{
+    btn.disabled = false;
+    btn.textContent = prev;
+  }
+});
+
 els.fileInput.addEventListener('change', async (e) => {
   const f = e.target.files?.[0];
   if (!f) return;
@@ -607,3 +660,4 @@ els.tabs.addEventListener('click', (e) => {
 
 /* Init */
 clearAll();
+setPdfStatus('No PDF analyzed yet.', 'status-warn');
