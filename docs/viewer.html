@@ -20,15 +20,24 @@
     </div>
 
     <div class="notice">
-      This viewer runs entirely in your browser. It does <b>not</b> parse PDFs.
-      To visualize a paper, first generate <span style="font-family:var(--mono)">ironclad_output.json</span>
-      using the desktop app, then load it here.
+      JSON mode works everywhere. PDF mode requires running this page through the local
+      IRONCLAD web server (<span style="font-family:var(--mono)">python -m app.web_viewer</span>),
+      which parses the PDF on your machine and returns interactive results
     </div>
 
     <div class="viewer-shell" style="margin-top:14px">
       <div class="card side">
         <div style="font-weight:800; margin-bottom:8px">Load data</div>
 
+        <div class="small">PDF (local web server mode)</div>
+        <input class="input" id="pdfInput" type="file" accept=".pdf,application/pdf"/>
+        <div class="cta-row" style="margin-top:10px">
+          <button class="btn primary" id="analyzePdf" type="button">Analyze PDF</button>
+        </div>
+        <div class="small" id="pdfStatus" style="margin-top:8px">No PDF analyzed yet.</div>
+
+        <hr class="sep"/>
+        
         <div class="small">IRONCLAD output JSON</div>
         <input class="input" id="fileInput" type="file" accept=".json,application/json"/>
         <div class="cta-row" style="margin-top:10px">
